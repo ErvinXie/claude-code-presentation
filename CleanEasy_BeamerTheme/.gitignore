@@ -1,0 +1,42 @@
+# LaTeX 辅助文件
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.xdv
+
+# LaTeX 临时文件
+*.dvi
+*.ps
+
+# 只保留源文件，忽略生成的 PDF
+# 如果想保留 PDF，可以注释掉下面这行
+# *.pdf
+
+# macOS 系统文件
+.DS_Store
+._*
+
+# 编辑器临时文件
+*~
+*.swp
+*.swo
+.*.sw?
+
+# IDE 配置文件
+.vscode/
+.idea/
+*.sublime-*
+
+# Backup 文件
+*.backup
+*.bak
+*-blx.bib

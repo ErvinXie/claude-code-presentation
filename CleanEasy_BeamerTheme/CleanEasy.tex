@@ -1,0 +1,726 @@
+%----------------------------------------------------------------------------------------
+%    PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+\documentclass[aspectratio=169,xcolor=dvipsnames]{beamer}
+\makeatletter
+\def\input@path{{theme/}}
+\makeatother
+\usetheme{CleanEasy}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{fix-cm}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{positioning, shapes, arrows, calc, decorations.pathreplacing, arrows.meta, backgrounds, patterns, overlay-beamer-styles}
+\usepackage{etoolbox}
+\usepackage{xeCJK}
+\setCJKmainfont{STSong}
+\setCJKsansfont{STHeiti}
+\setCJKmonofont{STFangsong}
+
+%----------------------------------------------------------------------------------------
+%    LAYOUT CONFIGURATION
+%----------------------------------------------------------------------------------------
+\input{configs/configs}
+%----------------------------------------------------------------------------------------
+%    TITLE PAGE
+%----------------------------------------------------------------------------------------
+\input{configs/title_page}
+%----------------------------------------------------------------------------------------
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\begin{frame}[plain]{目录}
+  \tableofcontents
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+\section{开场白}
+%----------------------------------------------------------------------------------------
+
+\begin{frame}{我的 Claude Code 使用体验}
+  \begin{block}{今年最幸运的一件事}
+    用上 Claude Code 是我今年最幸运的事。它给我的震撼不亚于、甚至超过了当初初次使用 ChatGPT 3.5 时的感受。
+  \end{block}
+
+  \vspace{0.3cm}
+
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \textbf{使用时间：}从 8 月至今约 2 个月
+
+      \vspace{0.3cm}
+
+      \textbf{完成的项目：}
+      \begin{itemize}
+        \item 系统级代码开发
+        \item 运维自动化
+        \item 各类小工具
+        \item 项目管理工作
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{exampleblock}{全新的协作范式}
+        AI 终于能和人站在同一信息起跑线上，充分发挥现代 AI 的真正实力
+      \end{exampleblock}
+
+      \vspace{0.3cm}
+
+      \begin{alertblock}{性价比超高}
+        每月 200 美元，简直是捡了大便宜
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{潜力有多大}
+  \begin{center}
+    \huge
+    一个普通水平的研究生\\
+    完全可以用 Claude Code\\
+    同时接 5 份远程实习\\
+    轻松月入 5 万
+  \end{center}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+\section{Claude Code 是什么}
+%----------------------------------------------------------------------------------------
+
+\begin{frame}{Claude Code 定位}
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \textbf{核心功能}
+      \begin{itemize}
+        \item AI 驱动的编程助手
+        \item 命令行界面操作
+        \item 深度集成文件系统
+        \item 自主执行任务
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{和其他工具的区别}
+      \begin{itemize}
+        \item vs IDE：理解更智能
+        \item vs Copilot：能完成整个任务
+        \item vs ChatGPT：直接操作代码
+      \end{itemize}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.5cm}
+
+  \begin{block}{最大优势}
+    基于命令行和文件系统，能拿到海量的上下文信息
+  \end{block}
+\end{frame}
+
+\begin{frame}{人机协作的本质}
+  \begin{block}{效率瓶颈在哪}
+    \begin{itemize}
+      \item \textbf{人类短板：}打字和说话的速度远比不上 AI
+      \item \textbf{人类优势：}强化学习（RL）效率远超 AI
+      \item \textbf{AI 优势：}处理海量背景信息
+    \end{itemize}
+  \end{block}
+
+  \vspace{0.3cm}
+
+  \begin{exampleblock}{最优协作模式}
+    AI 负责处理大量背景信息，人类根据实际情况提供新反馈和想法
+  \end{exampleblock}
+
+  \vspace{0.3cm}
+
+  \begin{alertblock}{Claude Code 的优势}
+    基于命令行和文件系统工作，获取上下文信息的能力极强
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{三大核心优势}
+  \begin{enumerate}
+    \item \textbf{全新的协作范式}
+    \begin{itemize}
+      \item AI 和人终于站在同一信息起跑线上
+      \item 充分发挥现代 AI 的真正实力
+    \end{itemize}
+
+    \vspace{0.3cm}
+
+    \item \textbf{真正能干活}
+    \begin{itemize}
+      \item 不只是提建议，而是直接动手
+      \item 自动拆解多步骤任务
+    \end{itemize}
+
+    \vspace{0.3cm}
+
+    \item \textbf{工具集成能力强}
+    \begin{itemize}
+      \item 编辑器、终端、Git、包管理器等一应俱全
+      \item 在不同工具间无缝切换
+    \end{itemize}
+  \end{enumerate}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+\section{基础功能}
+%----------------------------------------------------------------------------------------
+
+\begin{frame}{读懂代码}
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \textbf{快速理解大项目}
+      \begin{itemize}
+        \item 自动分析项目结构
+        \item 找出关键组件
+        \item 理清代码依赖关系
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{智能搜索}
+      \begin{itemize}
+        \item 语义化搜索代码
+        \item 跨文件关联分析
+        \item 快速定位具体实现
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{写代码}
+  \begin{itemize}
+    \item \textbf{智能补全}
+    \begin{itemize}
+      \item 基于上下文给出精准建议
+      \item 理解项目的代码风格
+    \end{itemize}
+
+    \vspace{0.3cm}
+
+    \item \textbf{重构和优化}
+    \begin{itemize}
+      \item 自动发现可优化的地方
+      \item 安全地重构代码
+    \end{itemize}
+
+    \vspace{0.3cm}
+
+    \item \textbf{自动修 bug}
+    \begin{itemize}
+      \item 检测和诊断错误
+      \item 给出修复方案
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+\section{高级功能}
+%----------------------------------------------------------------------------------------
+
+\begin{frame}{项目管理}
+  \begin{columns}
+    \begin{column}{0.3\textwidth}
+      \textbf{Git 操作}
+      \begin{itemize}
+        \item 自动提交
+        \item 管理分支
+        \item 创建 PR
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \textbf{依赖管理}
+      \begin{itemize}
+        \item 装包
+        \item 版本控制
+        \item 解决冲突
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \textbf{构建测试}
+      \begin{itemize}
+        \item 自动构建
+        \item 跑测试
+        \item 配置 CI/CD
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{任务管理}
+  \begin{block}{Todo 列表}
+    自动创建和追踪任务，确保不漏掉任何步骤
+  \end{block}
+
+  \vspace{0.3cm}
+
+  \begin{exampleblock}{拆解任务}
+    把复杂任务拆成一个个小步骤，逐步搞定
+  \end{exampleblock}
+
+  \vspace{0.3cm}
+
+  \begin{alertblock}{并行处理}
+    识别可以同时做的任务，提高效率
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{调试和优化}
+  \begin{enumerate}
+    \item \textbf{诊断和修复}
+    \begin{itemize}
+      \item 快速找到错误源头
+      \item 理解错误的来龙去脉
+      \item 给出修复建议
+    \end{itemize}
+
+    \vspace{0.3cm}
+
+    \item \textbf{性能优化}
+    \begin{itemize}
+      \item 找出性能瓶颈
+      \item 提供优化方案
+      \item 实施并验证改进效果
+    \end{itemize}
+
+    \vspace{0.3cm}
+
+    \item \textbf{代码质量}
+    \begin{itemize}
+      \item 检查代码规范
+      \item 建议最佳实践
+      \item 审查安全性
+    \end{itemize}
+  \end{enumerate}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+\section{真实案例}
+%----------------------------------------------------------------------------------------
+
+\begin{frame}{案例 1：快速看懂代码 - AWQ 量化格式研究}
+  \begin{block}{任务}
+    在 sglang 代码库里找到 AWQ 量化的 swizzle 格式是怎么排列的
+  \end{block}
+
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \textbf{技术背景}
+      \begin{itemize}
+        \item AWQ：4bit 量化格式
+        \item 不按行主序/列主序排
+        \item 用 Swizzle 顺序排列权重
+        \item 论文里说得不清楚
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{效率对比}
+      \begin{itemize}
+        \item \textcolor{green}{用 Claude Code：几分钟}
+        \item \textcolor{red}{传统方式：几小时}
+        \item 对代码库完全不熟的情况下
+        \item 需要深入理解底层实现
+      \end{itemize}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.3cm}
+
+  \begin{exampleblock}{核心价值}
+    快速看懂陌生代码库，精准定位关键实现
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}{案例 2：系统级开发 - KTransformers 支持 AWQ}
+  \begin{block}{任务}
+    实现 group 量化（group size = 64）
+  \end{block}
+
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \textbf{技术难点}
+      \begin{itemize}
+        \item K 维度需要分块
+        \item 高维矩阵切分和 pack
+        \item Per-channel 改 Per-group
+        \item AVX 指令优化
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{协作流程}
+      \begin{enumerate}
+        \item AI 先写测试用例
+        \item 参考原方案改代码
+        \item 生成基本框架
+        \item 人工调 AVX 指令
+        \item 成功跑通
+      \end{enumerate}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.3cm}
+
+  \begin{alertblock}{效率提升}
+    项目周期从 \textcolor{red}{2 周} 缩短到 \textcolor{green}{2 天}
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{案例 3：运维 - GPU 监控中心部署}
+  \begin{block}{背景}
+    多个 GPU 集群要管理，还得解决 GPU 抢占和资源分配的问题
+  \end{block}
+
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \textbf{技术方案}
+      \begin{itemize}
+        \item Node Exporter（系统监控）
+        \item NVIDIA DCGM Exporter（GPU 监控）
+        \item Grafana（可视化）
+        \item 自己写的 Dashboard
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{做了什么}
+      \begin{itemize}
+        \item 自动化部署脚本
+        \item Docker 容器化
+        \item 批量远程部署
+        \item 聚合监控数据
+        \item 多机器 GPU 看板
+      \end{itemize}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.3cm}
+
+  \begin{exampleblock}{完全 Video Coding}
+    \textcolor{green}{4 小时}搞定 vs 传统方式 \textcolor{red}{2-3 天}
+  \end{exampleblock}
+
+  \small{主要时间花在解决 Docker 源和依赖问题上}
+\end{frame}
+
+\begin{frame}{案例 4：文档工程 - 立项文档自动化}
+  \begin{block}{场景}
+    KTransformers 和华为合作的立项文档
+  \end{block}
+
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \textbf{传统方式的痛点}
+      \begin{itemize}
+        \item 疯狂复制粘贴
+        \item 反复调格式
+        \item 信息整合麻烦
+        \item 版本同步困难
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{用 Claude Code 的流程}
+      \begin{enumerate}
+        \item 准备背景资料和模板
+        \item 转成 Markdown
+        \item AI 生成初稿
+        \item 在 MD 里调整
+        \item 复制到 Word 里
+      \end{enumerate}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.3cm}
+
+  \begin{exampleblock}{效果}
+    写文档变得又快又轻松，专注内容而不是格式
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}{案例 5：管理自动化 - 项目进度管理系统}
+  \begin{block}{需求}
+    多个项目要对接同步，还得向上汇报、追踪进度
+  \end{block}
+
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \textbf{解决方案}
+      \begin{itemize}
+        \item 自动化进度更新
+        \item 多项目信息聚合
+        \item 自动生成日报
+        \item 自动生成周报
+        \item 数据可视化
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{带来的价值}
+      \begin{itemize}
+        \item 减少重复劳动
+        \item 汇报更准确
+        \item 节省管理时间
+        \item 方便追踪进度
+        \item 管理效率大幅提升
+      \end{itemize}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.3cm}
+
+  \begin{alertblock}{关键洞察}
+    把管理工作系统化、自动化，腾出时间来思考
+  \end{alertblock}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+\section{最佳实践}
+%----------------------------------------------------------------------------------------
+
+\begin{frame}{怎么问问题}
+  \begin{enumerate}
+    \item \textbf{清楚地描述}
+    \begin{itemize}
+      \item 说清楚想要什么结果
+      \item 描述现在是什么状态
+      \item 贴上错误信息
+    \end{itemize}
+
+    \vspace{0.3cm}
+
+    \item \textbf{给足上下文}
+    \begin{itemize}
+      \item 指出相关文件
+      \item 说明用的什么技术栈
+      \item 讲清楚有什么限制
+    \end{itemize}
+
+    \vspace{0.3cm}
+
+    \item \textbf{一步步来}
+    \begin{itemize}
+      \item 把复杂任务拆开
+      \item 每步都验证结果
+      \item 及时给反馈
+    \end{itemize}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{优化工作流}
+  \begin{columns}
+    \begin{column}{0.3\textwidth}
+      \textbf{工具集成}
+      \begin{itemize}
+        \item Git
+        \item IDE
+        \item 终端
+        \item CI/CD
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \textbf{团队协作}
+      \begin{itemize}
+        \item 代码规范
+        \item 文档同步
+        \item 知识共享
+        \item 最佳实践
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \textbf{提效技巧}
+      \begin{itemize}
+        \item 快捷命令
+        \item 用模板
+        \item 批量操作
+        \item 自动化脚本
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+\section{核心思考}
+%----------------------------------------------------------------------------------------
+
+\begin{frame}{Claude Code 的本质}
+  \begin{block}{信息处理加速器}
+    任何需要快速处理和输出信息的工作都可以交给它
+  \end{block}
+
+  \vspace{0.3cm}
+
+  \begin{exampleblock}{优化流程的思维}
+    人负责思考整个流程哪里可以优化
+  \end{exampleblock}
+
+  \vspace{0.3cm}
+
+  \begin{alertblock}{解放生产力}
+    从重复的信息处理工作中解放出来，专注创造性思考
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{性价比分析}
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \textbf{成本}
+      \begin{itemize}
+        \item 月费：200 美元
+        \item 学习成本：很低
+        \item 适应时间：很短
+      \end{itemize}
+
+      \vspace{0.5cm}
+
+      \begin{block}{总投入}
+        每月 200 美元 + 一点学习时间
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{收益}
+      \begin{itemize}
+        \item 效率提升：5-10 倍
+        \item 能力扩展：显著
+        \item 项目交付：更快
+        \item 收入潜力：大幅提升
+      \end{itemize}
+
+      \vspace{0.5cm}
+
+      \begin{alertblock}{性价比}
+        超值，简直是捡了大便宜
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{职业发展}
+  \begin{block}{研究生的机会}
+    怎么利用 Claude Code 接远程实习
+  \end{block}
+
+  \vspace{0.3cm}
+
+  \begin{enumerate}
+    \item \textbf{快速扩展技能}
+    \begin{itemize}
+      \item 从熟悉的领域快速切换到新领域
+      \item 降低学习门槛
+    \end{itemize}
+
+    \vspace{0.2cm}
+
+    \item \textbf{多个项目并行}
+    \begin{itemize}
+      \item 开发效率大幅提升
+        \item 同时接多个项目
+    \end{itemize}
+
+    \vspace{0.2cm}
+
+    \item \textbf{月入 5 万的路径}
+    \begin{itemize}
+      \item 5 个远程实习 × 每个 1 万
+      \item 基于效率提升完全可行
+    \end{itemize}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{未来展望}
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \textbf{Claude Code 的进化}
+      \begin{itemize}
+        \item 理解能力更强
+        \item 集成更多工具
+        \item 协作体验更好
+        \item 任务执行更智能
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{AI 协作范式的影响}
+      \begin{itemize}
+        \item 改变开发方式
+        \item 提升生产力水平
+        \item 降低技术门槛
+        \item 加速创新速度
+      \end{itemize}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.5cm}
+
+  \begin{center}
+    \large
+    \textbf{愿景：解放更多人的生产力}
+  \end{center}
+\end{frame}
+
+\begin{frame}{核心观点}
+  \begin{enumerate}
+    \item Claude Code 带来了全新的协作范式，AI 和人终于站在同一信息起跑线上
+
+    \vspace{0.3cm}
+
+    \item 最优协作模式：AI 处理背景信息 + 人类提供反馈和想法
+
+    \vspace{0.3cm}
+
+    \item 从多个真实案例看：效率提升 5-10 倍是常态
+
+    \vspace{0.3cm}
+
+    \item 月费 200 美元的投资带来巨大回报
+
+    \vspace{0.3cm}
+
+    \item 任何需要快速处理和输出信息的工作都可以交给 Claude Code
+  \end{enumerate}
+
+  \vspace{0.3cm}
+
+  \begin{center}
+    \Large
+    感谢 Claude Code，解放了我，也希望未来它能解放更多的人
+  \end{center}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+\section{Q\&A}
+%----------------------------------------------------------------------------------------
+
+\begin{frame}[plain]
+  \centering
+  \Huge \textbf{Q\&A}
+
+  \vspace{1cm}
+  \Large
+  提问与讨论
+
+  \vspace{1cm}
+  \normalsize
+  感谢聆听！
+\end{frame}
+
+\begin{frame}[plain]
+  \centering
+  \Huge \textbf{谢谢！}
+
+  \vspace{1cm}
+  \normalsize
+
+  \vspace{0.5cm}
+  \small
+  本演示文稿使用 Claude Code 制作
+\end{frame}
+
+\end{document}

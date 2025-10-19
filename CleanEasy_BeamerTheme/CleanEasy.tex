@@ -78,21 +78,11 @@
 
       \vspace{0.3cm}
 
-      \begin{alertblock}{性价比超高}
-        每月 200 美元，简直是捡了大便宜
+      \begin{alertblock}{性价比问题}
+        虽然每月 200 美元，但是仍然觉得值得
       \end{alertblock}
     \end{column}
   \end{columns}
-\end{frame}
-
-\begin{frame}{潜力有多大}
-  \begin{center}
-    \huge
-    一个普通水平的研究生\\
-    完全可以用 Claude Code\\
-    同时接 5 份远程实习\\
-    轻松月入 5 万
-  \end{center}
 \end{frame}
 
 %----------------------------------------------------------------------------------------
@@ -548,6 +538,44 @@
 \end{frame}
 
 %----------------------------------------------------------------------------------------
+\section{挑战与解决方案}
+%----------------------------------------------------------------------------------------
+
+\begin{frame}{上下文限制问题}
+  \begin{block}{现状}
+    Claude Code 的上下文一般在几百 K 级别，开发大项目时可能一个特性就用完
+  \end{block}
+
+  \vspace{0.3cm}
+
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \textbf{解决方案}
+      \begin{itemize}
+        \item 让 AI 写文档记录状态
+        \item 定期重构项目结构
+        \item 模块化开发
+        \item 分阶段处理任务
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{为什么不能简单扩展}
+      \begin{itemize}
+        \item 长上下文成本太高
+        \item 信息检索效率降低
+        \item 多 agent 是更优解
+      \end{itemize}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.3cm}
+
+  \begin{alertblock}{未来趋势}
+    多 agent 系统会成为主流（Haiku 4.5 已采用）
+  \end{alertblock}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
 \section{核心思考}
 %----------------------------------------------------------------------------------------
 
@@ -603,34 +631,129 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{职业发展}
-  \begin{block}{研究生的机会}
-    怎么利用 Claude Code 接远程实习
+\begin{frame}{价格问题与解决方案}
+  \begin{alertblock}{价格确实是个问题}
+    每月 200 美元对个人用户确实是不小的负担
+  \end{alertblock}
+
+  \vspace{0.3cm}
+
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \textbf{国内使用的实际问题}
+      \begin{itemize}
+        \item 缺乏合适的支付手段
+        \item 需要跨境支付机构
+        \item 可以考虑和同学拼单
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{对不同用户的价值}
+      \begin{itemize}
+        \item 个人：需权衡投入产出
+        \item 公司：效率提升值得投资
+        \item 学生：可以拼单降低成本
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{更经济的替代方案}
+  \begin{block}{Claude Code 支持多种模型}
+    除了 Anthropic 官方模型，还可接入其他模型
+  \end{block}
+
+  \vspace{0.3cm}
+
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \textbf{GLM-4.6}
+      \begin{itemize}
+        \item 开源模型
+        \item 价格：60 元/季度
+        \item 在 BFCL 等 function call 榜单第一
+        \item 日常使用基本没问题
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Kimi K2}
+      \begin{itemize}
+        \item 模型尺寸更大
+        \item 性能更强
+        \item 价格介于两者之间
+      \end{itemize}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.3cm}
+
+  \begin{exampleblock}{推荐}
+    如果觉得 Claude 价格太贵，可以考虑用 GLM-4.6
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}{AI 能力的本质思考}
+  \begin{block}{框架也是能力的一部分}
+    Claude Code 证明了 AI 的能力不完全由基础模型决定
+  \end{block}
+
+  \vspace{0.3cm}
+
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \textbf{传统观点}
+      \begin{itemize}
+        \item AI 能力 = 模型能力
+        \item 更大的模型 = 更强的能力
+        \item 追求参数规模
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{新的认知}
+      \begin{itemize}
+        \item 工作范式很重要
+        \item 框架设计是核心
+        \item 多 agent 协作
+      \end{itemize}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.3cm}
+
+  \begin{exampleblock}{实证}
+    Haiku 4.5 发布后，看代码功能完全用子 agent 实现
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}{对程序员角色的影响}
+  \begin{block}{技能广度 vs 技能深度}
+    Claude Code 显著增加了程序员的技能广度
   \end{block}
 
   \vspace{0.3cm}
 
   \begin{enumerate}
-    \item \textbf{快速扩展技能}
+    \item \textbf{分工方式的变化}
     \begin{itemize}
-      \item 从熟悉的领域快速切换到新领域
-      \item 降低学习门槛
+      \item 从技能出发 → 从需求出发
+      \item 更接近产品经理的工作方式
     \end{itemize}
 
     \vspace{0.2cm}
 
-    \item \textbf{多个项目并行}
+    \item \textbf{FAE 角色越来越重要}
     \begin{itemize}
-      \item 开发效率大幅提升
-        \item 同时接多个项目
+      \item 现场应用工程师（Field Application Engineer）
+      \item 理解客户需求
+      \item 转化成 AI 能处理的形式
     \end{itemize}
 
     \vspace{0.2cm}
 
-    \item \textbf{月入 5 万的路径}
+    \item \textbf{变革正在发生}
     \begin{itemize}
-      \item 5 个远程实习 × 每个 1 万
-      \item 基于效率提升完全可行
+      \item 从一个人用到许多人用
+      \item 当共识形成，下一步变革就会开始
     \end{itemize}
   \end{enumerate}
 \end{frame}
@@ -644,6 +767,7 @@
         \item 集成更多工具
         \item 协作体验更好
         \item 任务执行更智能
+        \item 多 agent 系统成熟
       \end{itemize}
     \end{column}
     \begin{column}{0.48\textwidth}
@@ -653,6 +777,7 @@
         \item 提升生产力水平
         \item 降低技术门槛
         \item 加速创新速度
+        \item 重塑团队结构
       \end{itemize}
     \end{column}
   \end{columns}
@@ -690,7 +815,7 @@
 
   \begin{center}
     \Large
-    感谢 Claude Code，解放了我，也希望未来它能解放更多的人
+    感谢 Claude Code，让我有能力实现我的各种想法，希望未来它会带来进一步的变革。
   \end{center}
 \end{frame}
 

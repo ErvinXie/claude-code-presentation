@@ -518,9 +518,10 @@
     \begin{column}{0.48\textwidth}
       \textbf{为什么不能简单扩展}
       \begin{itemize}
-        \item 长上下文成本太高
-        \item 信息检索效率降低
-        \item 多 agent 是更优解
+        \item \textcolor{red}{单模型无限长上下文不合理}
+        \item 即使能实现，成本也极高
+        \item 多 agent + 总结 token 是更优解
+        \item 信息检索效率也会降低
       \end{itemize}
     \end{column}
   \end{columns}
@@ -702,9 +703,10 @@
         \item 高效的上下文切换
         \item Agent 间通信机制
         \item 统一的资源管理
+        \item \textcolor{blue}{上下文总结与压缩}
       \end{itemize}
 
-      \vspace{0.3cm}
+      \vspace{0.2cm}
 
       \begin{exampleblock}{市场影响}
         多 Agent 调用频率 >> 单模型对话
@@ -772,17 +774,16 @@
     \begin{column}{0.48\textwidth}
       \textbf{必然的扩散}
       \begin{itemize}
-        \item 医疗：病历分析、诊断辅助
-        \item 法律：合同审查、案例研究
-        \item 金融：风险分析、报告生成
-        \item 教育：个性化辅导、作业批改
-        \item 设计：创意辅助、方案优化
+        \item 各行各业都有类似需求
+        \item 医疗、法律、金融、教育、设计...
+        \item 具体形态还不确定
+        \item 但趋势已经清晰
       \end{itemize}
 
       \vspace{0.3cm}
 
       \begin{alertblock}{商业机会}
-        每个垂直领域都会出现自己的"Claude Code"
+        其他领域会出现类似应用，具体形态还在探索中
       \end{alertblock}
     \end{column}
   \end{columns}

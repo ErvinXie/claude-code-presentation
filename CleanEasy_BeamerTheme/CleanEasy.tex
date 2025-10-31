@@ -80,6 +80,79 @@
 \end{frame}
 
 %----------------------------------------------------------------------------------------
+\section{基础概念：什么是终端}
+%----------------------------------------------------------------------------------------
+
+\begin{frame}{终端是什么？}
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \textbf{通俗理解}
+      \begin{itemize}
+        \item 就像手机上的"文件管理器"
+        \item 用文字命令控制电脑
+        \item 程序员的"工作台"
+        \item 比图形界面更强大、更快
+      \end{itemize}
+
+      \vspace{0.3cm}
+
+      \textbf{日常类比}
+      \begin{itemize}
+        \item 图形界面 = 用遥控器看电视
+        \item 终端 = 直接对电视说话
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{终端能做什么}
+      \begin{itemize}
+        \item 创建、移动、删除文件
+        \item 运行程序
+        \item 查看系统信息
+        \item 批量处理任务
+      \end{itemize}
+
+      \vspace{0.3cm}
+
+      \begin{exampleblock}{示例}
+        \small
+        \texttt{cd project} - 进入项目文件夹\\
+        \texttt{ls} - 列出所有文件\\
+        \texttt{python app.py} - 运行程序
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{为什么 Claude Code 基于终端？}
+  \begin{enumerate}
+    \item \textbf{信息密度高}
+    \begin{itemize}
+      \item 终端能看到文件结构、代码内容、运行结果
+      \item 一个屏幕包含海量信息
+      \item AI 可以快速理解整个项目状态
+    \end{itemize}
+
+    \vspace{0.3cm}
+
+    \item \textbf{操作能力强}
+    \begin{itemize}
+      \item 可以直接修改文件、运行代码
+      \item 不需要鼠标点来点去
+      \item 一条命令完成复杂操作
+    \end{itemize}
+
+    \vspace{0.3cm}
+
+    \item \textbf{程序员的自然环境}
+    \begin{itemize}
+      \item 程序员本来就在终端工作
+      \item AI 和人在同一个"工作台"上协作
+      \item 真正站在同一信息起跑线
+    \end{itemize}
+  \end{enumerate}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
 \section{Claude Code 是什么}
 %----------------------------------------------------------------------------------------
 
@@ -147,43 +220,43 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{输入方式的优化空间}
-  \begin{columns}
-    \begin{column}{0.48\textwidth}
-      \textbf{当前瓶颈}
-      \begin{itemize}
-        \item 工位上主要靠打字输入
-        \item 打字速度有限
-        \item 思维 → 文字转换慢
-      \end{itemize}
-
-      \vspace{0.5cm}
-
-      \begin{alertblock}{洞察}
-        输入方式成为人机协作的效率瓶颈
-      \end{alertblock}
-    \end{column}
-    \begin{column}{0.48\textwidth}
-      \textbf{语音交互的潜力}
-      \begin{itemize}
-        \item 语音速度远超打字
-        \item 更自然的表达方式
-        \item 解放双手继续操作
-      \end{itemize}
-
-      \vspace{0.5cm}
-
-      \begin{exampleblock}{未来方向}
-        语音 + Claude Code = 更高效的协作方式
-      \end{exampleblock}
-    \end{column}
-  \end{columns}
-
-  \vspace{0.3cm}
-
-  \small
-  \textit{注：需要考虑工作环境的噪音和隐私问题}
-\end{frame}
+% \begin{frame}{输入方式的优化空间}
+%   \begin{columns}
+%     \begin{column}{0.48\textwidth}
+%       \textbf{当前瓶颈}
+%       \begin{itemize}
+%         \item 工位上主要靠打字输入
+%         \item 打字速度有限
+%         \item 思维 → 文字转换慢
+%       \end{itemize}
+%
+%       \vspace{0.5cm}
+%
+%       \begin{alertblock}{洞察}
+%         输入方式成为人机协作的效率瓶颈
+%       \end{alertblock}
+%     \end{column}
+%     \begin{column}{0.48\textwidth}
+%       \textbf{语音交互的潜力}
+%       \begin{itemize}
+%         \item 语音速度远超打字
+%         \item 更自然的表达方式
+%         \item 解放双手继续操作
+%       \end{itemize}
+%
+%       \vspace{0.5cm}
+%
+%       \begin{exampleblock}{未来方向}
+%         语音 + Claude Code = 更高效的协作方式
+%       \end{exampleblock}
+%     \end{column}
+%   \end{columns}
+%
+%   \vspace{0.3cm}
+%
+%   \small
+%   \textit{注：需要考虑工作环境的噪音和隐私问题}
+% \end{frame}
 
 %----------------------------------------------------------------------------------------
 \section{核心能力概览}
@@ -321,39 +394,39 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{案例 4 \& 5：文档与管理自动化}
+\begin{frame}{案例 4：文档工程 - 立项文档自动化}
+  \begin{block}{场景}
+    KTransformers 与华为合作立项文档编写
+  \end{block}
+
+  \vspace{0.3cm}
+
   \begin{columns}
     \begin{column}{0.48\textwidth}
-      \textbf{立项文档}
+      \textbf{传统方式的痛点}
       \begin{itemize}
-        \item 背景资料 → MD
-        \item AI 生成初稿
-        \item 调整后转 Word
-        \item 专注内容不是格式
+        \item 疯狂复制粘贴
+        \item 反复调格式
+        \item 信息整合麻烦
+        \item 版本同步困难
       \end{itemize}
-
-      \vspace{0.3cm}
-
-      \begin{exampleblock}{效果}
-        文档编写快速无痛
-      \end{exampleblock}
     \end{column}
     \begin{column}{0.48\textwidth}
-      \textbf{项目进度管理}
+      \textbf{Claude Code 工作流}
       \begin{itemize}
-        \item 自动化进度更新
-        \item 多项目信息聚合
-        \item 自动生成日报周报
-        \item 数据可视化
+        \item 背景资料 + 模板 → MD
+        \item AI 生成初稿
+        \item 在 MD 里调整
+        \item 复制到 Word
       \end{itemize}
-
-      \vspace{0.3cm}
-
-      \begin{alertblock}{洞察}
-        系统化、自动化管理工作
-      \end{alertblock}
     \end{column}
   \end{columns}
+
+  \vspace{0.3cm}
+
+  \begin{exampleblock}{效果}
+    文档编写又快又轻松，专注内容而不是格式
+  \end{exampleblock}
 \end{frame}
 
 %----------------------------------------------------------------------------------------
@@ -586,36 +659,55 @@
   \end{exampleblock}
 \end{frame}
 
-\begin{frame}{多模型协作的未来}
+\begin{frame}{多 Agent 架构成为必然}
   \begin{columns}
     \begin{column}{0.48\textwidth}
-      \textbf{Claude Code 的实践}
-      \begin{itemize}
-        \item 小模型：快速阅读代码
-        \item 大模型：深度思考总结
-        \item 多 agent 分工协作
-        \item 任务自动分配
-      \end{itemize}
+      \textbf{为什么需要多 Agent？}
+      \begin{enumerate}
+        \item \textbf{上下文污染问题}
+        \begin{itemize}
+          \item 一个模型处理所有任务
+          \item 不同任务的上下文混杂
+          \item 影响推理质量
+        \end{itemize}
+
+        \item \textbf{性价比优化}
+        \begin{itemize}
+          \item 小模型：快速阅读
+          \item 大模型：深度思考
+          \item 针对性使用资源
+        \end{itemize}
+      \end{enumerate}
 
       \vspace{0.3cm}
 
-      \begin{alertblock}{洞察}
-        不同任务用不同模型，性价比最优
+      \begin{alertblock}{核心}
+        上下文隔离 + 成本优化 = 多 Agent 必然趋势
       \end{alertblock}
     \end{column}
     \begin{column}{0.48\textwidth}
-      \textbf{对系统的要求}
+      \textbf{Claude Code 的实践}
       \begin{itemize}
-        \item 多模型调度能力
-        \item 任务智能分配
-        \item 统一接口标准
-        \item 成本优化策略
+        \item Explore Agent：快速搜索
+        \item Main Agent：任务编排
+        \item Sub Agents：专项处理
+        \item 各 Agent 独立上下文
       \end{itemize}
 
       \vspace{0.3cm}
 
-      \begin{exampleblock}{趋势}
-        多模型场景会越来越常见
+      \textbf{对基础设施的要求}
+      \begin{itemize}
+        \item 多模型并发调度
+        \item 高效的上下文切换
+        \item Agent 间通信机制
+        \item 统一的资源管理
+      \end{itemize}
+
+      \vspace{0.3cm}
+
+      \begin{exampleblock}{市场影响}
+        多 Agent 调用频率 >> 单模型对话
       \end{exampleblock}
     \end{column}
   \end{columns}
@@ -652,6 +744,143 @@
       \item 当共识形成，下一步变革就会开始
     \end{itemize}
   \end{enumerate}
+\end{frame}
+
+\begin{frame}{商业化思考：从 Killer App 到生态}
+  \begin{block}{Claude Code 的历史地位}
+    第一个真正意义上的 AI Agent Killer App
+  \end{block}
+
+  \vspace{0.3cm}
+
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \textbf{成功的证明}
+      \begin{itemize}
+        \item 程序员领域：代码开发
+        \item 办公领域：文档处理
+        \item 真正能干活的 AI
+        \item 效率提升 5-10 倍
+      \end{itemize}
+
+      \vspace{0.3cm}
+
+      \begin{exampleblock}{核心逻辑}
+        如果在这些领域能成为 Killer App，其他领域也可以
+      \end{exampleblock}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{必然的扩散}
+      \begin{itemize}
+        \item 医疗：病历分析、诊断辅助
+        \item 法律：合同审查、案例研究
+        \item 金融：风险分析、报告生成
+        \item 教育：个性化辅导、作业批改
+        \item 设计：创意辅助、方案优化
+      \end{itemize}
+
+      \vspace{0.3cm}
+
+      \begin{alertblock}{商业机会}
+        每个垂直领域都会出现自己的"Claude Code"
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{市场扩张：Token 需求爆炸性增长}
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \textbf{对话 vs Agent 应用}
+      \begin{itemize}
+        \item 对话应用：几百到几千 tokens
+        \item Agent 应用：几万到几十万 tokens
+        \item 持续的上下文处理
+        \item 大量文件读写操作
+      \end{itemize}
+
+      \vspace{0.3cm}
+
+      \begin{alertblock}{市场扩大}
+        每次交互 token 消耗是对话应用的 10-100 倍
+      \end{alertblock}
+
+      \vspace{0.3cm}
+
+      \textbf{规模效应}
+      \begin{itemize}
+        \item 垂直领域扩散 × Token 倍增
+        \item AI Infra 市场指数级扩张
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{用户行为差异}
+      \begin{itemize}
+        \item 倾向使用原始 session
+        \item 不频繁新开 session
+        \item 上下文持续累积
+      \end{itemize}
+
+      \vspace{0.3cm}
+
+      \textbf{系统压力}
+      \begin{itemize}
+        \item 平均上下文长度显著增加
+        \item 显存占用大幅提升
+        \item KV Cache 管理复杂度增加
+      \end{itemize}
+
+      \vspace{0.3cm}
+
+      \begin{exampleblock}{基础设施挑战}
+        长上下文场景成为常态，不是例外
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{SLO 目标的根本性变化}
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \textbf{对话应用的 SLO}
+      \begin{itemize}
+        \item 关注 Prefill 延迟
+        \item 关注 Decode TPS
+        \item 用户盯着屏幕等输出
+        \item 逐字显示很重要
+      \end{itemize}
+
+      \vspace{0.3cm}
+
+      \begin{block}{优化目标}
+        首 token 时间 + 每秒输出 tokens 数
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Agent 应用的 SLO}
+      \begin{itemize}
+        \item 用户不等在屏幕前
+        \item 只关心最终结果
+        \item Prefill/Decode TPS 概念淡化
+        \item 任务完成时间才是核心
+      \end{itemize}
+
+      \vspace{0.3cm}
+
+      \begin{alertblock}{优化目标}
+        端到端完成时间（End-to-End Latency）
+      \end{alertblock}
+
+      \vspace{0.3cm}
+
+      \textbf{架构影响}
+      \begin{itemize}
+        \item 可以接受更高的 Prefill 延迟
+        \item 换取更好的资源利用率
+        \item 批处理优化空间更大
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}{Agent 应用：爆发前夜}
